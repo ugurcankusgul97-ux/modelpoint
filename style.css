@@ -396,4 +396,101 @@ input:checked + .slider .icon-sun { opacity: 1; color: var(--text-primary); }
     .mobile-links { list-style: none; text-align: center; }
     .mobile-links a { font-family: var(--font-serif); font-size: 2.5rem; color: var(--text-primary); text-decoration: none; display: block; margin: 20px 0; }
     .mobile-close { position: absolute; top: 30px; right: 30px; font-size: 2rem; color: var(--text-primary); }
+
+}
+/* =========================================
+   MOBILE RESPONSIVE PATCH (TELEFON AYARLARI)
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    /* 1. GENEL AYARLAR */
+    body { cursor: auto; } /* Telefonda özel imleci kapat, dokunmatik daha iyi çalışsın */
+    .cursor-dot, .cursor-outline { display: none; } /* Yuvarlak imleci gizle */
+    .container { width: 90%; padding: 0; } /* Kenar boşluklarını daralt */
+    
+    /* 2. HEADER & MENU */
+    header { padding: 20px; background: rgba(var(--bg-main), 0.95); } /* Header her zaman dolu görünsün */
+    .desktop-nav { display: none; } /* Masaüstü menüyü gizle */
+    .header-right { gap: 15px; }
+    .hamburger { display: flex; z-index: 10002; } /* Hamburgeri göster */
+    
+    /* Mobil Menü Düzeni */
+    .mobile-menu {
+        display: flex; /* Flex ile açılmasını sağla */
+        background: var(--bg-main);
+        padding-top: 50px;
+    }
+    .mobile-links a { font-size: 2rem; margin: 15px 0; }
+
+    /* 3. HERO BÖLÜMÜ (Giriş) */
+    .hero-title { 
+        font-size: 2.8rem; /* Dev başlığı küçült */
+        line-height: 1.2; 
+        margin-bottom: 20px;
+    }
+    .hero-desc { 
+        font-size: 1rem; 
+        max-width: 100%; 
+        margin-bottom: 30px; 
+    }
+    .hero-cta { 
+        flex-direction: column; /* Butonları alt alta al */
+        align-items: flex-start; 
+        width: 100%;
+    }
+    .btn { width: 100%; justify-content: center; } /* Butonlar tam genişlik olsun */
+    .overlay-gradient-left { width: 100%; opacity: 0.8; } /* Yazıların altını daha koyu yap ki okunsun */
+
+    /* 4. HAKKIMIZDA & GRIDLER */
+    .section { padding: 60px 0; } /* Boşlukları azalt */
+    .grid-layout { 
+        grid-template-columns: 1fr; /* Yan yana olanları alt alta al */
+        gap: 40px; 
+    }
+    .visual-wrapper { height: 350px; } /* Resim yüksekliğini telefona göre ayarla */
+    .floating-badge { 
+        right: 0; bottom: -20px; /* Deneyim kutusunu hizala */
+        padding: 15px; 
+    }
+    .floating-badge strong { font-size: 2rem; }
+    .section-heading { font-size: 2.2rem; }
+
+    /* 5. HİZMETLER & KARTLAR */
+    .cards-wrapper { 
+        grid-template-columns: 1fr; /* Kartları alt alta diz */
+        gap: 20px;
+    }
+    .service-card { padding: 30px 20px; } /* Kart iç boşluğunu azalt */
+    .card-icon { font-size: 2rem; margin-bottom: 15px; }
+
+    /* 6. BEFORE / AFTER */
+    .ba-container { height: 300px; } /* Yüksekliği azalt */
+    .img-before .label, .img-after .label {
+        font-size: 0.6rem; 
+        padding: 5px 10px; 
+        bottom: 15px;
+    }
+    .img-before .label { left: 10px; }
+    .img-after .label { right: 10px; }
+    
+    /* 7. İLETİŞİM */
+    .contact-wrapper { flex-direction: column; gap: 40px; }
+    .contact-title { font-size: 2.5rem; }
+    .form-row { flex-direction: column; gap: 0; } /* Ad ve Marka inputunu alt alta al */
+    .form-group { margin-bottom: 30px; }
+
+    /* 8. FOOTER */
+    .footer-content { flex-direction: column; gap: 20px; text-align: center; }
+    .footer-right a { margin: 0 10px; }
+    
+    /* 9. MARQUEE (Kayan Yazı) */
+    .brand-item { font-size: 1.5rem; gap: 40px; }
+}
+
+/* ÇOK KÜÇÜK EKRANLAR İÇİN EKSTRA (iPhone SE vb.) */
+@media (max-width: 400px) {
+    .hero-title { font-size: 2.2rem; }
+    .visual-wrapper { height: 250px; }
+    .ba-container { height: 250px; }
 }
